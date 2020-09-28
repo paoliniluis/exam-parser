@@ -10,7 +10,7 @@ with open('exam1.json') as json_file:
             for answer in question['answers']:
                 answer = answer.replace('\n', '')
                 if '(Correct)' in answer:
-                    answer = f'{answer[:len(answer)-13].strip()}\tcorrect\t'
+                    answer = f'{answer[:len(answer)].replace("(Correct)","").strip()}\tcorrect\t'
                 else:
                     answer = f'{answer.strip()}\tincorrect\t'
                 concatOfAnswers = concatOfAnswers + answer
